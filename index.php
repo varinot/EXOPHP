@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="fr">
   <head>
-    <meta charset="UTF-8" />
+    <!-- <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>exercices de PHP</title>
-    <link rel="stylesheet" media="screen" href="commun/style.css">
-  </head>
+	<link rel="stylesheet" media="screen" href="commun/style.css"> -->
+	<?php include ('commun/entet.php') ?>
+  </head> 
+
 
 	<body>
 		<h1>les opérateurs arythmétiques </h1>
@@ -45,8 +47,7 @@
 				?>
 		<div class="div_conteneur_parent">
 			
-			<h1>les opérateurs arythmétiques </h1>
-			<br>
+			
 			<?php
 				// liste des opérateurs arythmétiques
 				echo ".= 	Concatène puis affecte le résultat <br>
@@ -129,10 +130,10 @@
 			?>
 		</div>
 		<div class="div_conteneur_page">
-			<h1>les operateurs </h1>
+			<h1>les operateurs de comparaisons et  logiques</h1>
 			<br>
 			<?php
-				// liste des opérateurs de comparaisons
+				// liste des opérateurs de comparaisons et logiques
 				echo "== 	Permet de tester l’égalité sur les valeurs
 				=== 	Permet de tester l’égalité en termes de valeurs et de types
 				!= 	Permet de tester la différence en valeurs
@@ -158,8 +159,45 @@
 			le PHP ne renverra true que si une seule comparaison vaut true 
 			et renverra false si plusieurs comparaisons valent true
 			! 	Renvoie true si la comparaison vaut false (et inversement)<br><br>";
-		
 			?>
-		</div> 
+		</div>
+		<!-- EXOPOUSSIN 
+			tirage d'une branche exopoussin
+				tirage d'une branche exopoussin
+				Ecriture d'un programme qui demande l'âge
+				d'un enfant à l'utilisateur
+				Ensuite, ce programme informe l'utilisateur 
+				de la catégorie de l'enfant:
+				poussin de 6 à 7 ans
+				pupille de 8 à 9 ans
+				minime de 10 à 11 ans et cadet après 12 ans -->
+
+		<div class="div_exo_poussin">
+		<h1>   EXO POUSSIN </h1> 
+			<h2>   tirage d'une branche exopoussin  </h2>
+			<form Method="POST" Action="index.php">
+			renseignez un âge pour connaître la catégorie: 
+			<INPUT type=int size=2 name=age>
+			<INPUT type=submit name=Envoyer value=Envoyer>
+			</form>
+				<?php
+				$age = $_POST['age'];	
+				echo 'Age :' .$age.'<br>';
+				// Affichage des résultats
+				if ($age > 12){
+					echo 'catégorie cadet <br>'
+					;}
+					elseif ($age >= 10){
+						echo 'catégorie minime <br>'
+					;}
+					elseif ($age >= 8){
+						echo 'catégorie pupille <br>'
+						;}					
+					elseif ($age >= 6){
+						echo 'catégorie poussin <br>'
+						;}
+					else {echo "catégorie non affectée pour cet âge <br><br>";}
+				?>
+		</div>
 	</body> 
 </html>        
