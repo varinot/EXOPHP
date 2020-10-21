@@ -199,5 +199,52 @@
 					else {echo "catégorie non affectée pour cet âge <br><br>";}
 				?>
 		</div>
+		<div class="div_exo_compteur">
+		<!-- EXOCompteur 
+				ce programme informe l'utilisateur 
+				d'un compteur qui affiche un nombre jusqu'à 
+				10 utilisation d'une boucle for et une boucle while-->
+			<h1>   EXO COMPTEUR </h1> 
+			<h2>   CONTINUITÉ DE LA branche exopoussin  </h2>
+			<?php 
+			// $compteur=0;
+			$compteurmax=0;
+			echo 'COMPTEUR en boucle while<br>';
+			while($compteurmax<=10)
+			{
+				echo $compteurmax;		
+				echo '<br>';// <--- saut de ligne
+				$compteurmax++;	
+				
+			}
+			echo 'COMPTEUR en boucle for<br>';
+			for($compteur = 0; $compteur<11; $compteur++)
+			 {
+				echo $compteur;
+				echo '<br>'; // <--- saut de ligne
+			}	
+			?>
+		</div>
+		<div class="div_exo_prenom">
+		<!-- EXOprénom 
+				ce programme informe l'utilisateur 
+				en affichant le prénom de chaque index
+				de l'équipe-->
+			<h1>   EXO PRENOM CONTINUITÉ DE LA branche exopoussin</h1> 
+			<h2> TABLEAU ÉQUIPE    </h2>
+			<?php 
+			
+			echo 'prénoms équipe en foreach<br>';
+			foreach ($equipe1 as $ind){
+				echo 'je  suis ' .$ind.'<br>'; 
+					}
+				echo '<br>';
+			echo 'prénoms équipe en for<br>';
+			for($ind= 0; $ind<3; $ind++){
+					echo 'je  suis ' .$equipe1[$ind].'<br>'; 
+						}
+					echo '<br>';	
+			?>
+		</div>
 	</body> 
 </html>        
