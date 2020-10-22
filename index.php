@@ -64,7 +64,7 @@
 				% 	Modulo (reste d’une division euclidienne)<br>
 				** 	Exponentielle (élévation à la puissance d’un nombre par un autre)<br>";
 				?>
-			<div class="div_conteneur_parent">
+			
 			
 			<h1>les tableaux </h1>
 			<br>
@@ -245,6 +245,63 @@
 						}
 					echo '<br>';	
 			?>
+		</div>
+		<div class="div_exo_fonction">
+		<!-- EXOfonction 
+				cette partie utilise des fonctions qui permmettent:
+				-d'afficher la valeur d'un index précis du tableau EQUIPE1
+				-de convertir une valeur mètre en cm
+				-change la valeur d'une variable déclarée dans le scope global
+				(travailler sur l'emplacement mémoire d'un argument et non
+				par copie de valeur)
+				-de changer le métier des personnes du tableau associatif (profess)
+				fonction native qui affiche la date de l'instant T
+				""       ""      "" permet l'échappement de syntaxe html
+				"  "   "   "    "  " "  "  de cacher la valeur d'une variable (hachage) 
+				lister 3 fonctions natives au moins et expliquer usage et intérêt-->
+			<h1>   EXO FONCTION branche exofonction</h1> 
+			<h2> TABLEAU ÉQUIPE1    </h2>
+			<?php 
+				$ind= 0; 
+				echo 'afficher la valeur d\'un index précis dans le tableau EQUIPE1 <br>';
+				// printf (chaîne formattée); 	
+				//Entier en notation décimale %d , argument variable
+			
+				printf ("l'index du tableau est %d", $ind); 
+				echo '<br>';
+				printf ("la valeur de l'index du tableau est %s", $equipe1[$ind]); 	
+				echo '<br>';
+				
+			?>
+			<h2> FONCTION CONVERSION   </h2>
+			<p>	conversion de valeur métrée en cm	</p>
+			
+			<?php 
+			$valmet=0;
+				function conversi($valmet) {	
+					return $valmet*100; 
+				};
+			echo '2m50 en cm ', conversi(2.5); 						
+			;
+								
+			?>	
+
+			<h2> FONCTION CHANGEMENT DE METIER   </h2>
+			<p>	CHANGEMENT MÉTIER DU TABLEAU PROFESS	</p>
+			
+			<?php 
+			$metier= "";
+			$ind= 0;
+			$profess = [
+				"benoit" => "boucher","sebastien" => "soudeur",	"audrey" => "assistant",];
+			function changement(&$profess,$ind){
+				$profess[$ind]='chapelier';
+			}
+			changement($profess,'sebastien');
+				echo '<br>';
+				var_dump($profess);				
+			?>	
+
 		</div>
 	</body> 
 </html>        
